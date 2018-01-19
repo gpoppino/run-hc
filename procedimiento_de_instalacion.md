@@ -6,7 +6,7 @@
 
 `gpoppino ALL=(root) NOPASSWD: /usr/sbin/ntpq, /usr/bin/df, /usr/bin/grep, /sbin/multipath, /opt/novell/eDirectory/bin/ndsconfig, /opt/novell/eDirectory/bin/ndsrepair, /usr/bin/systemctl`
 
-También es posible que se tenga que agregar el script de inicialización de un servicio como tomcat en SLES11 o sistemas con System V al /etc/sudoers (en SLES12 o sistemas con SystemD no es necesario). Por ejemplo: /etc/init.d/tomcat. Nota: Es recomendado utilizar SUDO para ejecutar el script.
+También es posible que se tenga que agregar el script de inicialización de un servicio como tomcat en SLES11 o sistemas con System V al /etc/sudoers (en SLES12 o sistemas con SystemD no es necesario) cuando la opción *HANDLE_SERVICES* se encuentre habilitada. Por ejemplo: /etc/init.d/tomcat. Otros comandos opcionales son: *restart, service, /usr/bin/lsxiv, /usr/sbin/lspath, /usr/bin/datapath, /opt/DynamicLinkManager/bin/dlnkmgr y /usr/DynamicLinkManager/bin/dlnkmgr*. Nota: Es recomendado utilizar SUDO para ejecutar el script.
 ## Premisas
 1. Se asume que el script de monitoreo *hc* se instala en
 _$HOME/scripts/hc-master_ y _run-hc.sh_ en _$HOME/scripts_.
@@ -49,5 +49,3 @@ Finalmente, se debe otorgar el permiso de ejecución al script:
 
 `$ chmod +x $HOME/scripts/run-hc.sh`
 
-## Consultas
-Por consultas contactarse con Gerónimo Poppino: [gresco@gmail.com](gresco@gmail.com).
