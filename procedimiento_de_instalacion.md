@@ -11,13 +11,14 @@ También es posible que se tenga que agregar el script de inicialización de un 
 1. Se asume que el script de monitoreo *hc* se instala en
 _$HOME/scripts/hc-master_ y _run-hc.sh_ en _$HOME/scripts_.
 ## Descarga del script
-1. Descargar el script desde el siguiente link: [https://github.com/gpoppino/hc/archive/master.zip](https://github.com/gpoppino/hc/archive/master.zip). Por ejemplo: `$ wget https://github.com/gpoppino/hc/archive/master.zip`.
-2. Descomprimir el archivo zip con `unzip master.zip`.
-3. Repetir el mismo procedimiento para el script *run-hc.sh* ubicado en: [https://github.com/gpoppino/run-hc/archive/master.zip](https://github.com/gpoppino/run-hc/archive/master.zip).
-4. Copiar el script *run-hc.sh* a *$HOME/scripts*.
+1. Crear el directorio donde se descargará el script: `cd; mkdir scripts; cd scripts`
+2. Descargar el script desde el siguiente link: [https://github.com/gpoppino/hc/archive/master.zip](https://github.com/gpoppino/hc/archive/master.zip). Por ejemplo: `$ wget https://github.com/gpoppino/hc/archive/master.zip`.
+3. Descomprimir el archivo zip con `unzip master.zip`.
+4. Repetir el mismo procedimiento para el script *run-hc.sh* ubicado en: [https://github.com/gpoppino/run-hc/archive/master.zip](https://github.com/gpoppino/run-hc/archive/master.zip).
+5. Copiar el script *run-hc.sh* a *$HOME/scripts*.
 ## Configuración del script
 1. Configurar el script *hc* editando el archivo _config.general_.
-2. Intentar ejecutar el script con `cd $HOME/scripts/hc; bash main_healthcheck.sh`. Luego realizar ajustes a la configuración del mismo. Es posible que el chequeo de resolución DNS que existe en el directorio _extensions/_ deba ser eliminado para que no se ejecute. Por ejemplo:
+2. Intentar ejecutar el script con `cd $HOME/scripts/hc-master; bash main_healthcheck.sh`. Luego realizar ajustes a la configuración del mismo. Es posible que el chequeo de resolución DNS que existe en el directorio _extensions/_ deba ser eliminado para que no se ejecute. Por ejemplo:
 	`$ rm -f extensions/check_name_resolution`
 ## Instalación del script en CRON
 ### Configuración
@@ -30,6 +31,7 @@ _$HOME/scripts/hc-master_ y _run-hc.sh_ en _$HOME/scripts_.
 * HOSTS: direcciones de IP o nombres de hosts en los que se ejecutará el script remotamente si se utiliza la opción "-r".
 * MAIL\_SUBJECT: Título del email.
 * REMOTE\_USER: nombre de usuario con que se hará login en el host remoto.
+
 2. Finalmente, ejecutar el script para probarlo:
 	`$ bash $HOME/scripts/run-hc.sh`
 ### Instalación en CRON
